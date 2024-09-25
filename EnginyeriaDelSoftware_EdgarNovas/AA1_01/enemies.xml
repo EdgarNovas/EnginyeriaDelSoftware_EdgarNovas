@@ -2,7 +2,7 @@
 <game>
     <enemies>
         <enemy>
-            <name>Golem de Pedra</name>
+            <name>Stone Golem</name>
             <hp>150</hp>
             <attack>30</attack>
             <defense>20</defense>
@@ -25,7 +25,7 @@
             </weapons>
         </enemy>
         <enemy>
-            <name>Llops de Gel</name>
+            <name>Wolf Fighter</name>
             <hp>100</hp>
             <attack>20</attack>
             <defense>15</defense>
@@ -36,7 +36,7 @@
             </weapons>
         </enemy>
         <enemy>
-            <name>Drac de Foc</name>
+            <name>Drake</name>
             <hp>250</hp>
             <attack>50</attack>
             <defense>30</defense>
@@ -51,17 +51,17 @@
     <weapons>
         <weapon>
             <id>1</id>
-            <type>Espasa</type>
+            <type>Sword</type>
             <range>1.5</range>
         </weapon>
         <weapon>
             <id>2</id>
-            <type>Arc</type>
+            <type>Bow</type>
             <range>10</range>
         </weapon>
         <weapon>
             <id>3</id>
-            <type>Heus</type>
+            <type>Claws</type>
             <range>5</range>
         </weapon>
     </weapons>
