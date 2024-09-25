@@ -38,24 +38,13 @@ public:
 
     // Mètode per llegir l'arxiu XML i omplir les estructures de dades
     void loadFromXML(const std::string& filename) {
-        rapidxml::file<> xmlFile(filename.c_str()); // Crea un objecte per llegir el fitxer XML
+        rapidxml::file<> xmlFile(filename.c_str());
         rapidxml::xml_document<> doc;
-        doc.parse<0>(xmlFile.data()); // Analitza el contingut del fitxer
-
-        // Llegir armes
-        rapidxml::xml_node<>* weaponsNode = doc.first_node("game")->first_node("weapons");
-        for (rapidxml::xml_node<>* weaponNode = weaponsNode->first_node("weapon"); weaponNode; weaponNode = weaponNode->next_sibling()) {
-            Weapon weapon;
-            weapon.id = std::stoi(weaponNode->first_node("id")->value());
-            weapon.type = weaponNode->first_node("type")->value();
-            weapon.range = std::stof(weaponNode->first_node("range")->value());
-
-            weapons.push_back(weapon); // Afegir arma a la llista
-        }
+        doc.parse<0>(xmlFile.data());
 
         // Llegir enemics
-        rapidxml::xml_node<>* enemiesNode = doc.first_node("game")->first_node("enemies");
-        for (rapidxml::xml_node<>* enemyNode = enemiesNode->first_node("enemy"); enemyNode; enemyNode = enemyNode->next_sibling()) {
+        for (auto* enemyNode = doc.first_node("game")->first_node("enemies")->first_node("enemy");
+            enemyNode; enemyNode = enemyNode->next_sibling()) {
             Enemy enemy;
             enemy.name = enemyNode->first_node("name")->value();
             enemy.hp = std::stoi(enemyNode->first_node("hp")->value());
@@ -64,15 +53,15 @@ public:
             enemy.experience = std::stoi(enemyNode->first_node("experience")->value());
             enemy.attackFrequency = std::stof(enemyNode->first_node("attackFrequency")->value());
 
-            // Llegir les armes que pot usar
-            rapidxml::xml_node<>* weaponsListNode = enemyNode->first_node("weapons");
-            for (rapidxml::xml_node<>* weaponIDNode = weaponsListNode->first_node("weapon"); weaponIDNode; weaponIDNode = weaponIDNode->next_sibling()) {
-                int weaponID = std::stoi(weaponIDNode->value());
-                enemy.weapons.push_back(weaponID); // Afegir ID d'arma a la llista
+            // Llegir armes
+            for (auto* weaponIDNode = enemyNode->first_node("weapons")->first_node("weapon");
+                weaponIDNode; weaponIDNode = weaponIDNode->next_sibling()) {
+                enemy.weapons.push_back(std::stoi(weaponIDNode->value()));
             }
 
-            enemies.push_back(enemy); // Afegir enemic a la llista
+            enemies.push_back(enemy);
         }
+    
     }
 };
 
