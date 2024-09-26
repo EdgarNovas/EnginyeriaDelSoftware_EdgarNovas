@@ -13,6 +13,30 @@
                 <weapon>2</weapon>
             </weapons>
         </enemy>
+		<enemy>
+			<name>Golem de Pedra2</name>
+			<hp>150</hp>
+			<attack>30</attack>
+			<defense>20</defense>
+			<experience>50</experience>
+			<attackFrequency>1.0</attackFrequency>
+			<weapons>
+				<weapon>1</weapon>
+				<weapon>2</weapon>
+			</weapons>
+		</enemy>
+		<enemy>
+			<name>Golem de Pedra2</name>
+			<hp>150</hp>
+			<attack>30</attack>
+			<defense>20</defense>
+			<experience>50</experience>
+			<attackFrequency>1.0</attackFrequency>
+			<weapons>
+				<weapon>1</weapon>
+				<weapon>2</weapon>
+			</weapons>
+		</enemy>
         <enemy>
             <name>Espectre</name>
             <hp>80</hp>

@@ -34,7 +34,7 @@ struct Enemy {
 class EnemyManager {
 public:
     std::vector<Enemy> enemies;          // Llista d'enemics
-    std::vector<Weapon> weapons;         // Llista d'armes
+    std::vector<Weapon*> weapons;         // Llista d'armes
 
     // Mètode per llegir l'arxiu XML i omplir les estructures de dades
     void loadFromXML(const std::string& filename) {
