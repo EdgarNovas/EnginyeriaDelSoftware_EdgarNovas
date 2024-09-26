@@ -5,6 +5,7 @@
 
 int main()
 {
+	/*
 	//1) Declare data
 
 	int a[10];
@@ -67,6 +68,58 @@ int main()
 
 	//6)Close File
 	myFileIn.close();
+	*/
+
+
+	char c = 'a';
+
+	std::ofstream myFile;
+
+	myFile.open("save.dat", std::ios::out | std::ios::binary);// | std::ios::app
+
+	//4) Check if file is open
+
+	if (!myFile.is_open())
+		return -1;
+
+	//5)Write to file
+
+	myFile.write(reinterpret_cast<char*>(&c), sizeof(char));
+
+	//6) Close the file
+	myFile.close();
+
+
+	//READ
+
+	//1)
+	std::ifstream myFileIn;
+
+	myFileIn.open("save.dat", std::ios::in | std::ios::binary);
+
+	//2) Check if file is open
+
+	if (!myFileIn.is_open())
+		return -2;
+
+	//3) Change array values
+
+	c = 'b';
+	std::cout << c;
+
+	//4)Read from file
+
+	myFileIn.read(reinterpret_cast<char*>(&c), sizeof(char));
+
+
+	//5) Check Value
+	
+	std::cout << c;
+	
+
+	//6)Close File
+	myFileIn.close();
+
 
 	return 0;
 }
