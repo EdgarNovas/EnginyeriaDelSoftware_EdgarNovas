@@ -39,8 +39,11 @@ int main()
 	
 
 
-	//EXERCISE 2
 
+
+
+	//EXERCISE 2
+	/*
 	std::list<Enemy> enemies;
 
 	for (int i = 0; i < 10; i++) {
@@ -84,6 +87,54 @@ int main()
 	RecoverEnemies(recoverEnemies, "fileWeapons");
 
 	fileNameIn.close();
+
+	*/
+
+
+
+
+
+
+	//EXERCISE 3
+	//WRITE
+	std::map<std::string, int> myMap;
+	
+	std::string nameOfFile = "mapData.tucan";
+
+	FillMapWithRandomData(myMap, 10);
+
+	std::ofstream fileName;
+	fileName.open(nameOfFile, std::ios::out | std::ios::binary);
+
+	if (!fileName.is_open())
+		return -1;
+
+	SaveMap(myMap,nameOfFile);
+
+	fileName.close();
+
+
+	//READ
+
+	std::map<std::string, int> myrecoverMap;
+
+	std::ifstream fileNameIn;
+	fileNameIn.open(nameOfFile, std::ios::in | std::ios::binary);
+
+	if (!fileNameIn.is_open())
+		return-2;
+
+	RecoverMap(myrecoverMap, nameOfFile);
+
+	fileNameIn.close();
+
+
+	for (auto& pair : myrecoverMap) {
+
+		std::cout << pair.first << " " << pair.second << "\n";
+
+	}
+
 
 	return 0;
 }

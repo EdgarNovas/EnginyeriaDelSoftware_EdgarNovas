@@ -3,6 +3,7 @@
 #include <fstream>
 #include <string>
 #include <list>
+#include <map>
 #pragma once
 
 struct GameObject {
@@ -68,6 +69,7 @@ struct Enemy
 	float y;
 	std::vector<Weapon> weapons;
 };
+
 
 
 
@@ -160,4 +162,79 @@ void GenerateRandomName(char (&name)[10]) {
 		name[i] = charset[rand() % maxIndex];
 	}
 	name[9] = '\0';
+}
+
+
+
+//EXERCISE 3
+
+void SaveMap(std::map<std::string, int> m, std::string fileName) {
+
+	std::ofstream file(fileName, std::ios::out | std::ios::binary);
+
+	int size = m.size();
+
+	file.write(reinterpret_cast<char*>(&size), sizeof(int));
+
+	for (auto& pair : m)
+	{
+		int stringSize = pair.first.size();
+		file.write(reinterpret_cast<char*>(&stringSize), sizeof(int));
+		file.write(pair.first.c_str(), pair.first.size());
+
+		file.write(reinterpret_cast<char*>(&pair.second), sizeof(int));
+	}
+
+	file.close();
+}
+
+
+void RecoverMap(std::map<std::string, int>& m, std::string fileName) {
+
+	std::ifstream file(fileName, std::ios::in | std::ios::binary);
+
+	int size;
+	file.read(reinterpret_cast<char*>(&size), sizeof(int));
+
+	for (int i = 0; i < size;i++) {
+		int stringSize;
+		file.read(reinterpret_cast<char*>(&stringSize), sizeof(int));
+
+		char* buff = new char[stringSize + 1];
+		file.read(buff, stringSize);
+		buff[stringSize] = '\0';
+
+		std::string readString(buff);
+		delete[] buff;
+
+		int secondPair;
+		file.read(reinterpret_cast<char*>(&secondPair), sizeof(int));
+
+		m.insert(std::make_pair( readString, secondPair));
+
+	}
+
+	file.close();
+
+
+}
+
+
+
+std::string GenerateRandomString(int length) {
+	const char charset[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	std::string randomStr;
+	for (int i = 0; i < length; ++i) {
+		randomStr += charset[rand() % (sizeof(charset) - 1)]; 
+	}
+	return randomStr;
+}
+
+// Función para llenar un std::map con datos aleatorios
+void FillMapWithRandomData(std::map<std::string, int>& myMap, int numberOfElements) {
+	for (int i = 0; i < numberOfElements; ++i) {
+		std::string randomKey = GenerateRandomString(5); 
+		int randomValue = rand() % 100 + 1;  
+		myMap[randomKey] = randomValue;
+	}
 }
