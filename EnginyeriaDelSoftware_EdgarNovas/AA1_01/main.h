@@ -8,6 +8,9 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <string>
+//#define NDEBUG ES PER SALTARTE EL CASSERT PER FER ASSERT y que ho ignori
+#include <cassert>
 
 
 #pragma once
