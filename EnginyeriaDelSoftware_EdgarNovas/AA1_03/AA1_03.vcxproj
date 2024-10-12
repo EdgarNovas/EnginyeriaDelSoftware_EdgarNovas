@@ -133,7 +133,12 @@
   <ItemGroup>
     <ClInclude Include="Animation2D.h" />
     <ClInclude Include="Image.h" />
+    <ClInclude Include="LeaderBoardMenu.h" />
+    <ClInclude Include="MainMenu.h" />
+    <ClInclude Include="Menu.h" />
+    <ClInclude Include="MenuManager.h" />
     <ClInclude Include="Model3D.h" />
+    <ClInclude Include="PauseMenu.h" />
     <ClInclude Include="Renderer.h" />
     <ClInclude Include="RendererManager.h" />
   </ItemGroup>

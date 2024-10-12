@@ -21,7 +21,7 @@ public:
 			renderers[i]->Draw();
 		}
 	}
-
+	//Pregunta: No se si esto es necesario porque es para los new del main? 
 	~RendererManager() {
 		for (Renderer* renderer : renderers) {
 			delete renderer;  
