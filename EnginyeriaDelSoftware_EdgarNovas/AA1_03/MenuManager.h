@@ -7,7 +7,7 @@ class MenuManager
 {
 private:
 	std::vector<Menu*> menus;
-	Menu* currentMenu;
+	Menu* currentMenu = nullptr;
 public:
 	void Draw() {
 		if (currentMenu == nullptr)

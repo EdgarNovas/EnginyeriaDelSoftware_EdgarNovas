@@ -16,10 +16,7 @@ void Exercici1I2() {
 	manager.Draw();
 }
 
-int main() {
-
-	//Exercici1I2();
-	
+void Exercici3() {
 	MenuManager menuManager;
 	menuManager.AddMenu(new MainMenu);
 	menuManager.AddMenu(new PauseMenu);
@@ -31,12 +28,19 @@ int main() {
 		std::cout << "0 = Main Menu" << std::endl;
 		std::cout << "1 = Pause Menu" << std::endl;
 		std::cout << "2 = LeaderBoard Menu" << std::endl;
-		
+
 		std::cin >> numMenu;
 		numMenu = menuManager.ChangeCurrentMenu(numMenu);
 		menuManager.Draw();
 
-	} while (numMenu>=0);
+	} while (numMenu >= 0);
+}
+
+int main() {
+
+	//Exercici1I2();
+	
+	Exercici3();
 
 	
 
