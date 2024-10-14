@@ -21,6 +21,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SimpleGameEngine", "SimpleG
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AA1_03", "AA1_03\AA1_03.vcxproj", "{35164D42-4AA2-465D-9499-40E1F84CAF14}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AA1_04", "AA1_04\AA1_04.vcxproj", "{0722C29D-9386-40E6-8B1D-6110160430B2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -101,6 +103,14 @@ Global
 		{35164D42-4AA2-465D-9499-40E1F84CAF14}.Release|x64.Build.0 = Release|x64
 		{35164D42-4AA2-465D-9499-40E1F84CAF14}.Release|x86.ActiveCfg = Release|Win32
 		{35164D42-4AA2-465D-9499-40E1F84CAF14}.Release|x86.Build.0 = Release|Win32
+		{0722C29D-9386-40E6-8B1D-6110160430B2}.Debug|x64.ActiveCfg = Debug|x64
+		{0722C29D-9386-40E6-8B1D-6110160430B2}.Debug|x64.Build.0 = Debug|x64
+		{0722C29D-9386-40E6-8B1D-6110160430B2}.Debug|x86.ActiveCfg = Debug|Win32
+		{0722C29D-9386-40E6-8B1D-6110160430B2}.Debug|x86.Build.0 = Debug|Win32
+		{0722C29D-9386-40E6-8B1D-6110160430B2}.Release|x64.ActiveCfg = Release|x64
+		{0722C29D-9386-40E6-8B1D-6110160430B2}.Release|x64.Build.0 = Release|x64
+		{0722C29D-9386-40E6-8B1D-6110160430B2}.Release|x86.ActiveCfg = Release|Win32
+		{0722C29D-9386-40E6-8B1D-6110160430B2}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
