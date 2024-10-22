@@ -127,7 +127,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Controller.h" />
+    <ClInclude Include="Event.h" />
     <ClInclude Include="InputHandler.h" />
+    <ClInclude Include="Joystick.h" />
+    <ClInclude Include="Keyboard.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
