@@ -5,5 +5,6 @@ namespace LSP {
 	public:
 		LSP_Enemy() = default;
 		virtual ~LSP_Enemy() = default;
+		virtual int GetHealth() = 0;
 	};
 }

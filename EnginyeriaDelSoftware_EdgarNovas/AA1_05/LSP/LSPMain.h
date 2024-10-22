@@ -12,7 +12,6 @@ namespace LSP
 		void Main();
 	private:
 		void PrintEnemiesHealth(const std::vector<LSP_Enemy*>& enemies);
-		int BossHealth(Boss* boss);
-		int MinionHealth(Minion* boss);
+
 	};
 }
