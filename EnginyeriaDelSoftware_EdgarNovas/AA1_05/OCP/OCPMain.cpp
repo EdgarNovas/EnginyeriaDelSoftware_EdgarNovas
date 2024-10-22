@@ -1,27 +1,31 @@
 #include "OCPMain.h"
-#include "Enemy.h"
-
+//#include "Enemy.h"
+#include "NormalEnemy.h"
+#include "Boss.h"
 #include <cstdio>
 
 namespace OCP
 {
 	void OCPMain::Main()
 	{
-		auto enemy = Enemy(false);
-		auto boss = Enemy(true);
-		auto enemies = std::vector<Enemy>{ enemy, boss };
+		Enemy* enemy =new NormalEnemy(24,56);
+		Enemy* boss = new Boss(24,54);
+		std::vector<Enemy*> enemies{ enemy, boss };
 
 		PrintEnemiesHealth(enemies);
+
+		delete enemy;
+		delete boss;
 	}
 
-	void OCPMain::PrintEnemiesHealth(const std::vector< Enemy>& enemies)
+	void OCPMain::PrintEnemiesHealth(const std::vector< Enemy*>& enemies)
 	{
-		for (auto enemy : enemies) {
-			if (enemy.IsBoss()) {
-				std::printf("Es un jefe, tiene %d de vida\n", 200);
+		for (const auto& enemy : enemies) {
+			if (auto* boss = dynamic_cast<const Boss*>(enemy)) {
+				std::printf("Es un jefe, tiene %d de vida\n", enemy->GetHealth());
 			}
-			else if (!enemy.IsBoss()) {
-				std::printf("No es un jefe, tiene %d de vida\n", 100);
+			else if (auto* normalEnemy = dynamic_cast<const NormalEnemy*>(enemy)) {
+				std::printf("No es un jefe, tiene %d de vida\n", enemy->GetHealth());
 			}
 
 		}

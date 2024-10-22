@@ -8,6 +8,6 @@ namespace OCP
 	public:
 		void Main();
 	private:
-		void PrintEnemiesHealth(const std::vector< Enemy>& enemies);
+		void PrintEnemiesHealth(const std::vector< Enemy*>& enemies);
 	};
 }

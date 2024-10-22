@@ -3,10 +3,12 @@ namespace OCP {
 	class Enemy
 	{
 	public:
-		Enemy(bool isBoss);
-		bool IsBoss();
+		Enemy(int attackDamage, int hp);
+		virtual ~Enemy() = default;
+		virtual int GetHealth() = 0;
 
-	private:
-		bool _isBoss;
+	protected:
+		int attackDamage;
+		int hp;
 	};
 }

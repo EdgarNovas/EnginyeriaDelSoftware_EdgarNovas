@@ -5,13 +5,8 @@ namespace SRP
 	{
 	}
 
-	int SRP_Configuration::GetNumberOfEnemies()
-	{
-		return _numberOfEnemies;
-	}
-
 	void SRP_Configuration::SaveOnDisk(const SRP_Configuration& configuration)
 	{
-		// ...
+		// ... SAVING ON DISK
 	}
 }

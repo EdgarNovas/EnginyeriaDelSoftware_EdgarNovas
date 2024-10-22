@@ -5,7 +5,7 @@ namespace SRP
 	{
 	public:
 		SRP_Configuration(int numberOfEnemies);
-		int GetNumberOfEnemies();
+		
 
 		void SaveOnDisk(const SRP_Configuration& configuration);
 

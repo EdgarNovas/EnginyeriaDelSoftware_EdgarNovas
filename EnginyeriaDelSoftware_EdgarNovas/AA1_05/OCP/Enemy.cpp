@@ -1,13 +1,9 @@
 #include "Enemy.h"
 
 namespace OCP {
-	Enemy::Enemy(bool isBoss) : _isBoss(isBoss)
+	Enemy::Enemy(int attackDamage, int hp) : attackDamage(attackDamage), hp(hp)
 	{
 	}
 
-	bool Enemy::IsBoss()
-	{
-		return _isBoss;
-	}
 
 }

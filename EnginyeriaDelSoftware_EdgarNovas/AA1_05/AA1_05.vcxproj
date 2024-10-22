@@ -153,7 +153,9 @@
     <ClInclude Include="LSP\Enemy.h" />
     <ClInclude Include="LSP\LSPMain.h" />
     <ClInclude Include="LSP\Minion.h" />
+    <ClInclude Include="OCP\Boss.h" />
     <ClInclude Include="OCP\Enemy.h" />
+    <ClInclude Include="OCP\NormalEnemy.h" />
     <ClInclude Include="OCP\OCPMain.h" />
     <ClInclude Include="SRP\EnemyHandler.h" />
     <ClInclude Include="SRP\SRPMain.h" />

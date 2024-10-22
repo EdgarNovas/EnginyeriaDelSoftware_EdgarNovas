@@ -104,5 +104,11 @@
     <ClInclude Include="SRP\EnemyHandler.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="OCP\NormalEnemy.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="OCP\Boss.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
