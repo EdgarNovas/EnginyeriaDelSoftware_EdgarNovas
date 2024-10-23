@@ -6,6 +6,9 @@
 
 namespace OCP
 {
+	//Aqui tenim un problema on no es pot extendre el codi ja que hauriem de estar tocant el print health
+	//Llavors he fet que Enemy sigui una clase abstracta i que el enemy i el boss apliquin les seves funcions
+	//Llavors tots els enemics nomes son enemics y no fa falta buscar quin tipus es
 	void OCPMain::Main()
 	{
 		Enemy* enemy =new NormalEnemy(24,56);
@@ -27,6 +30,10 @@ namespace OCP
 			else if (auto* normalEnemy = dynamic_cast<const NormalEnemy*>(enemy)) {
 				std::printf("No es un jefe, tiene %d de vida\n", enemy->GetHealth());
 			}
+
+			//OR
+			std::printf("El enemigo, tiene %d de vida\n", enemy->GetHealth());
+
 
 		}
 	}

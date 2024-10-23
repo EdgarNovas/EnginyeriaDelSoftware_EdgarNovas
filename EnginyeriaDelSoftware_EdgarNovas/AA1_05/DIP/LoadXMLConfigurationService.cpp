@@ -2,12 +2,13 @@
 #include <cstdio>
 namespace DIP
 {
-	DIP_Configuration LoadXMLConfigurationService::LoadConfiguration()
+	void LoadXMLConfigurationService::LoadConfiguration()
 	{
-		// Suponemos que carga el XML
-		std::printf("Cunfiguración cargada desde XML\n");
-		return DIP_Configuration();
+		// Implementation for loading XML configuration
+		std::cout << "Loading configuration from XML" << std::endl;
+		
 	}
 }
+
 
 

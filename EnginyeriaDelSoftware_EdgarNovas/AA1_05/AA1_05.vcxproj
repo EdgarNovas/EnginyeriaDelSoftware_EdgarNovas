@@ -129,6 +129,7 @@
   <ItemGroup>
     <ClCompile Include="DIP\DIPMain.cpp" />
     <ClCompile Include="DIP\DIP_Configuration.cpp" />
+    <ClCompile Include="DIP\LoadBinaryConfigurationService.cpp" />
     <ClCompile Include="DIP\LoadXMLConfigurationService.cpp" />
     <ClCompile Include="ISP\ISPMain.cpp" />
     <ClCompile Include="ISP\ISP_Boss.cpp" />
@@ -144,6 +145,8 @@
   <ItemGroup>
     <ClInclude Include="DIP\DIPMain.h" />
     <ClInclude Include="DIP\DIP_Configuration.h" />
+    <ClInclude Include="DIP\IConfigurationService.h" />
+    <ClInclude Include="DIP\LoadBinaryConfigurationService.h" />
     <ClInclude Include="DIP\LoadXMLConfigurationService.h" />
     <ClInclude Include="ISP\IAttack.h" />
     <ClInclude Include="ISP\IHurt.h" />

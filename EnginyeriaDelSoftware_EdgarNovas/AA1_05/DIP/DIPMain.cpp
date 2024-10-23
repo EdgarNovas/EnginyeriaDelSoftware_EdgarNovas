@@ -1,21 +1,27 @@
 #include "DIPMain.h"
-#include "DIP_Configuration.h"
-#include "LoadXMLConfigurationService.h"
 
 #include <cstdio>
 namespace DIP
 {
-	//Incumple solid porque esta basado en concreciones en que loadXML 
-	// y no es un load a secas y ya buscaremos lo que queda
+	//
+	//Aquesto codi dependia de LoadXMLConfigurationService y no deuria
+	// per arreglar aixo he fet una abstracció on ara els 2 loads poden usarse a la vegada
+	// o escollir sense cambiar el codi amb un IConfigurationService
+	//
+	//
 	void DIPMain::Main()
 	{
-		LoadConfiguration();
-	}
+		DIPMain mainApp;
+		LoadXMLConfigurationService xmlService;
+		mainApp.LoadConfiguration(&xmlService);
 
-	void DIPMain::LoadConfiguration()
+		// Load from Binary
+		LoadBinaryConfigurationService binaryService;
+		mainApp.LoadConfiguration(&binaryService);
+	}
+	void DIPMain::LoadConfiguration(IConfigurationService* configurationService)
 	{
-		auto loadConfigurationService = LoadXMLConfigurationService();
-		loadConfigurationService.LoadConfiguration();
+		configurationService->LoadConfiguration();
 		
 	}
 }

@@ -1,10 +1,11 @@
 #pragma once
-#include "DIP_Configuration.h"
+#include "IConfigurationService.h"
+#include <iostream>
 namespace DIP
 {
-	class LoadXMLConfigurationService
+	class LoadXMLConfigurationService : public IConfigurationService
 	{
 	public:
-		DIP_Configuration LoadConfiguration();
+		void LoadConfiguration() override;
 	};
-}
+};

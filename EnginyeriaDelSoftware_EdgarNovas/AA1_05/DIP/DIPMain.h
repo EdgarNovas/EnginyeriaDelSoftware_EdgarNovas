@@ -1,11 +1,12 @@
 #pragma once
+#include "LoadBinaryConfigurationService.h"
+#include "LoadXMLConfigurationService.h"
 namespace DIP
 {
 	class DIPMain
 	{
 	public:
 		void Main();
-	private:
-		void LoadConfiguration();
+		void LoadConfiguration(IConfigurationService* configurationService);
 	};
 }
