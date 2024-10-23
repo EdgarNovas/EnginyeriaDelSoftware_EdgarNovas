@@ -5,6 +5,8 @@
 #include <cstdio>
 namespace DIP
 {
+	//Incumple solid porque esta basado en concreciones en que loadXML 
+	// y no es un load a secas y ya buscaremos lo que queda
 	void DIPMain::Main()
 	{
 		LoadConfiguration();

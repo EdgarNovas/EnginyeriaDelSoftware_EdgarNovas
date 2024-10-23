@@ -145,6 +145,8 @@
     <ClInclude Include="DIP\DIPMain.h" />
     <ClInclude Include="DIP\DIP_Configuration.h" />
     <ClInclude Include="DIP\LoadXMLConfigurationService.h" />
+    <ClInclude Include="ISP\IAttack.h" />
+    <ClInclude Include="ISP\IHurt.h" />
     <ClInclude Include="ISP\ISPMain.h" />
     <ClInclude Include="ISP\ISP_Boss.h" />
     <ClInclude Include="ISP\ISP_Enemy.h" />

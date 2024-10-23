@@ -4,7 +4,8 @@ namespace ISP {
 	ISP_Boss::ISP_Boss()
 	{
 	}
-	void ISP_Boss::Attack(ISP_Enemy* enemy) const
+
+	void ISP_Boss::Attack(IHurt* enemy) const
 	{
 		enemy->ReceiveDamage(20);
 	}

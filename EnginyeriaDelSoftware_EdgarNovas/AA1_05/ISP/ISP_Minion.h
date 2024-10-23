@@ -5,9 +5,9 @@ namespace ISP
 	class ISP_Minion : public ISP_Enemy
 	{
 	public:
-		ISP_Minion();
+		ISP_Minion() = default;
 
-		virtual void Attack(ISP_Enemy* enemy) const override;
-		virtual void ReceiveDamage(int damageToAdd) override;
+		virtual void Attack(IHurt* enemy)const override;
+		virtual void ReceiveDamage(int damageToAdd);
 	};
 }

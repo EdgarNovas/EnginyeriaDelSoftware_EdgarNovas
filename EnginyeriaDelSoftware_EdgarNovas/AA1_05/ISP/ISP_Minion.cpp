@@ -5,9 +5,11 @@ namespace ISP
 	ISP_Minion::ISP_Minion()
 	{
 	}
-	void ISP_Minion::Attack(ISP_Enemy* enemy) const
+	
+	
+	void ISP_Minion::Attack(IHurt* enemy)const
 	{
-		enemy->ReceiveDamage(10);
+		enemy->ReceiveDamage(200);
 	}
 	void ISP_Minion::ReceiveDamage(int damageToAdd)
 	{

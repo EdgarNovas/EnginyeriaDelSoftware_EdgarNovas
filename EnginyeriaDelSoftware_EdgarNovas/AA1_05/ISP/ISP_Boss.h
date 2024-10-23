@@ -7,7 +7,7 @@ namespace ISP
 	public:
 		ISP_Boss();
 
-		virtual void Attack(ISP_Enemy* enemy) const override;
+		virtual void Attack(IHurt* enemy)const override;
 		virtual void ReceiveDamage(int damageToAdd) override;
 	};
 }

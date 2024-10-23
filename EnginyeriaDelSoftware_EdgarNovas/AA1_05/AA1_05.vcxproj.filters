@@ -110,5 +110,11 @@
     <ClInclude Include="OCP\Boss.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="ISP\IHurt.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ISP\IAttack.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
