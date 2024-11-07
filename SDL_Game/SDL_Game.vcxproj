@@ -27,6 +27,7 @@
   <ItemGroup>
     <ClInclude Include="sources\Game.h" />
     <ClInclude Include="sources\GameObject.h" />
+    <ClInclude Include="sources\InputManager.h" />
     <ClInclude Include="sources\Vector2.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
