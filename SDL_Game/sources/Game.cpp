@@ -7,26 +7,17 @@ void Game::Init()
 	//2)Create window and renderer
 	CreateWindowAndRenderer();
 	SDL_SetRenderDrawColor(_renderer, 0, 0, 0, 255);//cambiar el 0x por 255 a ver que pasa
-	_isRunning = true;
+	
 	//3) Set render draw color
 
 	_gameObjects.push_back(GameObject("resources/cat.jpg", _renderer));
 }
 
-void Game::HandleEvents()
-{
-	SDL_Event event;
 
-	while (SDL_PollEvent(&event))
-	{
-		if (event.type == SDL_QUIT)
-			_isRunning = false;
-	}
-}
 
 void Game::Update()
 {
-
+	
 }
 
 void Game::Render()
@@ -46,10 +37,6 @@ void Game::Release()
 	SDL_Quit();
 }
 
-bool Game::IsRunning() const
-{
-	return _isRunning;
-}
 
 void Game::InitSDL()
 {

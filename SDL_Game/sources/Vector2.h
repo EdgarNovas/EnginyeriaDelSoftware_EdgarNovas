@@ -1,5 +1,5 @@
 #pragma once
-
+#include <cmath>
 class Vector2
 {
 public:
@@ -11,4 +11,19 @@ public:
 		: x(_x), y(_y){}
 
 
+public:
+	inline void Normalize() {
+		float lenght = sqrtf(x * x + y * y);
+		x /= lenght;
+		y /= lenght;
+	}
+	inline Vector2 operator+(const Vector2& other) {
+		return Vector2(x + other.x, y + other.y);
+	}
+	inline Vector2 operator-(const Vector2& other) {
+		return Vector2(x - other.x, y - other.y);
+	}
+	inline Vector2 operator*(const float& value) {
+		return Vector2(x * value, y * value);
+	}
 };
