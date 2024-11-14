@@ -10,13 +10,17 @@ void Game::Init()
 	
 	//3) Set render draw color
 
-	_gameObjects.push_back(GameObject("resources/cat.jpg", _renderer));
+	_objects.push_back(Object("resources/cat.jpg", _renderer));
+	
+	_objects[0].GetRigidBody()->AddForce(Vector2(100, 100));
 }
 
 
 
 void Game::Update()
 {
+	for (Object o : _objects)
+		o.Update(0.01f);
 	
 }
 
@@ -25,8 +29,8 @@ void Game::Render()
 	SDL_RenderClear(_renderer);
 
 	//Render elements
-	for (GameObject go : _gameObjects)
-		go.Render(_renderer);
+	for (Object o : _objects)
+		o.Render(_renderer);
 	SDL_RenderPresent(_renderer);
 }
 

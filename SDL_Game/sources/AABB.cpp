@@ -1,5 +1,7 @@
 #include "AABB.h"
 
+
+
 bool AABB::CheckOverLappingPoint(Vector2 point)
 {
     bool insideX = point.x >= topLeft.x && point.x <= topLeft.x + size.x;

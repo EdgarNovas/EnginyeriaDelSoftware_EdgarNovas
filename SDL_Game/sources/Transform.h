@@ -16,10 +16,3 @@ public:
 
 };
 
-Transform::Transform()
-{
-}
-
-Transform::~Transform()
-{
-}

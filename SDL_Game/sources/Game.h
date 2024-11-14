@@ -1,7 +1,7 @@
 #pragma once
 #include <SDL.h>
 #include <vector>
-#include "GameObject.h"
+#include "Object.h"
 
 class Game
 {
@@ -23,7 +23,7 @@ private:
 	
 	SDL_Window* _window;
 	SDL_Renderer* _renderer;
-	std::vector<GameObject> _gameObjects;
+	std::vector<Object> _objects;
 };
 
 //1) Test It Works
