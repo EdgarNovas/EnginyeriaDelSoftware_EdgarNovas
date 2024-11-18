@@ -1,12 +1,8 @@
 #pragma once
 #include "Transform.h"
 #include "Rigidbody.h"
+#include "ImageRenderer.h"
 
-//Temporal Includes
-#include<SDL.h>
-#include<string>
-#include<SDL_image.h>
-#include<cassert>
 class Object
 {
 protected:
@@ -15,45 +11,30 @@ protected:
 	Rigidbody* physics;
 private:
 	bool isPendingDestroy;
-	//Temporal variables to test
-	//fix when testing is done
-	SDL_Texture* texture;
-	SDL_Rect sourceRect;
-	SDL_Rect destinationRect;
+
+	ImageRenderer* renderer;
+	
 public:
 
 	//Object();
-	Object(std::string path, SDL_Renderer* renderer)
+	Object(std::string texturePath,Vector2 sourceOffset, Vector2 sourceSize)
 	{
 		transform = new Transform();
 		physics = new Rigidbody(transform);
-		SDL_Surface* surf = IMG_Load(path.c_str());
+		renderer = new ImageRenderer(transform,texturePath,sourceOffset,sourceSize);
 
-		assert(surf);
-		texture = SDL_CreateTextureFromSurface(renderer, surf);
-		assert(texture);
-
-		
-		//Set dest rect
-		destinationRect = { (int)transform->position.x, (int)transform->position.y,100,100 };
-		//Set source rect
-		sourceRect = { 0,0, surf->w, surf->h };
-
-		SDL_FreeSurface(surf);
+		isPendingDestroy = false;
 	}
-
-
-
 
 	virtual void Update(float dt) {
 		if(physics != nullptr)
 			physics->Update(dt);
+
+		renderer->Update(dt);
 	}
-	virtual void Render(SDL_Renderer* renderer)
+	virtual void Render()
 	{
-		destinationRect.x = transform->position.x;
-		destinationRect.y = transform->position.y;
-		SDL_RenderCopy(renderer, texture, &sourceRect, &destinationRect);
+		renderer->Render();
 	}
 	Transform* GetTransform() { return transform; }
 	Rigidbody* GetRigidBody() { return physics; }

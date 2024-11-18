@@ -4,24 +4,28 @@
 #include <string>
 #include <cassert>
 
-#define Render RenderManager::GetInstance()
+#define RM RenderManager::GetInstance()
 
 class RenderManager
 {
 public:
 	static RenderManager* GetInstance()
 	{
-		if(instance == nullptr)
-			instance = new RenderManager();
+		static RenderManager instance;
 
-		return instance;
+		return &instance;
 	}
 
 	void Init();
+	void Release();
 	void ClearScreen();
 	void RenderScreen();
 
 	SDL_Renderer* GetRenderer() { return renderer; }
+	
+	void LoadTexture(std::string path);
+
+	SDL_Texture* GetTexture(std::string path);
 
 private:
 	RenderManager() = default;
@@ -29,10 +33,12 @@ private:
 	RenderManager& operator= (const RenderManager&) = delete;
 	~RenderManager();
 
-	static RenderManager* instance;
+	
 
 	SDL_Window* window;
 	SDL_Renderer* renderer;
+
+	std::map<std::string, SDL_Texture*> textures;
 
 	void InitSDL();
 	void CreateWindowAndRenderer();

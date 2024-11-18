@@ -1,0 +1,39 @@
+#pragma once
+#include "Renderer.h"
+#include "RenderManager.h"
+class ImageRenderer: public Renderer
+{
+public:
+
+	ImageRenderer(Transform* transform, std::string resourcePath, Vector2 sourceOffset,
+		Vector2 sourceSize) : Renderer(transform, resourcePath)
+	{
+		RM->LoadTexture(resourcePath);
+
+		sourceRect = SDL_Rect
+		{
+			(int)sourceOffset.x,
+			(int)sourceOffset.y,
+			(int)sourceSize.x,
+			(int)sourceSize.y
+
+		};
+
+		destRect = SDL_Rect
+		{
+			(int)transform->position.x,
+			(int)transform->position.y,
+			(int)transform->scale.x,
+			(int)transform->scale.y
+		};
+	}
+
+
+
+	// Inherited via Renderer
+	virtual void Update(float dt) override;
+
+	virtual void Render() override;
+
+
+};

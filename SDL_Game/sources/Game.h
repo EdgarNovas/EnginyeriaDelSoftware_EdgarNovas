@@ -16,13 +16,6 @@ public:
 	
 
 private:
-	void InitSDL();
-	void CreateWindowAndRenderer();
-
-
-	
-	SDL_Window* _window;
-	SDL_Renderer* _renderer;
 	std::vector<Object> _objects;
 };
 
