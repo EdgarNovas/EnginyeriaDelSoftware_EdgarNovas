@@ -1,5 +1,6 @@
 #include "Game.h"
 #include "InputManager.h"
+#include "TimeManager.h"
 #include<exception>
 #include <iostream>
 
@@ -19,20 +20,19 @@ int main(int argc, char* args[])
 		game.Release();
 		return -1;
 	}
-	
-	while (!Input.Listen())
+	bool playing = true;
+	while (playing)
 	{
+		TIME.Update();
+		if (TIME.ShouldUpdateGame())
+		{
+			std::cout << TIME.GetDeltaTime() << std::endl;
+			playing = !Input.Listen();
+			game.Update();
+			game.Render();
+			TIME.ResetDeltaTime();
+		}
 		
-		game.Update();
-		game.Render();
-		if (Input.GetEvent(SDLK_SPACE, DOWN))
-		{
-			printf("Tecla ESPACIO presionada (DOWN)\n");
-		}
-		else if (Input.GetEvent(SDLK_w, DOWN))
-		{
-			printf("Working w \n");
-		}
 	}
 
 	game.Release();

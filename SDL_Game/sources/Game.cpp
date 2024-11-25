@@ -1,5 +1,6 @@
 #include "Game.h"
 #include "RenderManager.h"
+#include "TimeManager.h"
 
 void Game::Init()
 {
@@ -13,7 +14,7 @@ void Game::Init()
 void Game::Update()
 {
 	for (Object o : _objects)
-		o.Update(0.01f);
+		o.Update(TIME.GetDeltaTime());
 	
 }
 

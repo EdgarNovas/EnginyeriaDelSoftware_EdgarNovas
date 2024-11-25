@@ -68,5 +68,8 @@
     <ClInclude Include="sources\ImageRenderer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="sources\TimeManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

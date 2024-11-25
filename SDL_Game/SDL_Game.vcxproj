@@ -36,6 +36,7 @@
     <ClInclude Include="sources\Renderer.h" />
     <ClInclude Include="sources\RenderManager.h" />
     <ClInclude Include="sources\Rigidbody.h" />
+    <ClInclude Include="sources\TimeManager.h" />
     <ClInclude Include="sources\Transform.h" />
     <ClInclude Include="sources\Vector2.h" />
   </ItemGroup>
