@@ -1,34 +1,33 @@
 #include "Game.h"
 #include "RenderManager.h"
 #include "TimeManager.h"
-
+#include "Gameplay.h"
+#include "SceneManager.h"
+#include "MainMenu.h"
 void Game::Init()
 {
 	RM->Init();
+	assert(SM.AddScene("Main Menu", new MainMenu()));
+	assert(SM.AddScene("Gameplay", new Gameplay()));
 
-	_objects.push_back(Object("resources/cat.jpg",Vector2(0.f,0.f),Vector2(1200.f,675.f)));
-
-	_objects[0].GetRigidBody()->AddForce(Vector2(100, 100));
+	assert(SM.InitFirstScene("Gameplay"));	
 }
 
 void Game::Update()
 {
-	for (Object o : _objects)
-		o.Update(TIME.GetDeltaTime());
-	
+	SM.UpdateCurrentScene();
 }
 
 void Game::Render()
 {
 	RM->ClearScreen();
-	//Render elements
-	for (Object o : _objects)
-		o.Render();
+	SM.GetCurrentScene()->Renderer();
 
 	RM->RenderScreen();
 }
 
 void Game::Release()
 {
+	SM.GetCurrentScene()->OnExit();
 	RM->Release();
 }

@@ -21,8 +21,10 @@
   <ItemGroup>
     <ClCompile Include="sources\AABB.cpp" />
     <ClCompile Include="sources\Game.cpp" />
+    <ClCompile Include="sources\Gameplay.cpp" />
     <ClCompile Include="sources\ImageRenderer.cpp" />
     <ClCompile Include="sources\main.cpp" />
+    <ClCompile Include="sources\MainMenu.cpp" />
     <ClCompile Include="sources\Oldmain.cpp" />
     <ClCompile Include="sources\RenderManager.cpp" />
     <ClCompile Include="sources\Vector2.cpp" />
@@ -30,12 +32,17 @@
   <ItemGroup>
     <ClInclude Include="sources\AABB.h" />
     <ClInclude Include="sources\Game.h" />
+    <ClInclude Include="sources\Gameplay.h" />
     <ClInclude Include="sources\ImageRenderer.h" />
     <ClInclude Include="sources\InputManager.h" />
+    <ClInclude Include="sources\MainMenu.h" />
     <ClInclude Include="sources\Object.h" />
     <ClInclude Include="sources\Renderer.h" />
     <ClInclude Include="sources\RenderManager.h" />
     <ClInclude Include="sources\Rigidbody.h" />
+    <ClInclude Include="sources\Scene.h" />
+    <ClInclude Include="sources\SceneManager.h" />
+    <ClInclude Include="sources\Spawner.h" />
     <ClInclude Include="sources\TimeManager.h" />
     <ClInclude Include="sources\Transform.h" />
     <ClInclude Include="sources\Vector2.h" />

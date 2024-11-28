@@ -1,7 +1,6 @@
 #pragma once
 #include <SDL.h>
-#include <vector>
-#include "Object.h"
+#include "Scene.h"
 
 class Game
 {
@@ -15,9 +14,9 @@ public:
 
 	
 
-private:
-	std::vector<Object> _objects;
 };
+
+
 
 //1) Test It Works
 //2) Implement State Machine

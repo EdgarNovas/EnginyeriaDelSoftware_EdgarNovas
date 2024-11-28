@@ -2,6 +2,7 @@
 #include "Transform.h"
 #include "Rigidbody.h"
 #include "ImageRenderer.h"
+#include "TimeManager.h"
 
 class Object
 {
@@ -16,7 +17,6 @@ private:
 	
 public:
 
-	//Object();
 	Object(std::string texturePath,Vector2 sourceOffset, Vector2 sourceSize)
 	{
 		transform = new Transform();
@@ -26,11 +26,11 @@ public:
 		isPendingDestroy = false;
 	}
 
-	virtual void Update(float dt) {
+	virtual void Update() {
 		if(physics != nullptr)
-			physics->Update(dt);
+			physics->Update(TIME.GetDeltaTime());
 
-		renderer->Update(dt);
+		renderer->Update(TIME.GetDeltaTime());
 	}
 	virtual void Render()
 	{
