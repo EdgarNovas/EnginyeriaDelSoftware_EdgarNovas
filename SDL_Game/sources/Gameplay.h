@@ -11,4 +11,5 @@ public:
 	void OnExit() override;
 	void Update() override;
 	void Renderer() override;
+	void SpawnObjectRandomly();
 };

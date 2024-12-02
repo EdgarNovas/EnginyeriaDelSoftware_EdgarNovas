@@ -16,6 +16,9 @@ public:
 		return &instance;
 	}
 
+	const unsigned int WINDOW_WIDTH = 1360;
+	const unsigned int WINDOW_HEIGHT = 768;
+
 	void Init();
 	void Release();
 	void ClearScreen();

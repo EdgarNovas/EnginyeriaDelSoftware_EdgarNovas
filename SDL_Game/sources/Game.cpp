@@ -7,6 +7,7 @@
 void Game::Init()
 {
 	RM->Init();
+	RM->LoadTexture("resources/cat.jpg");
 	assert(SM.AddScene("Main Menu", new MainMenu()));
 	assert(SM.AddScene("Gameplay", new Gameplay()));
 

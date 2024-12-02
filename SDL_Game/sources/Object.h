@@ -11,19 +11,30 @@ protected:
 	Transform* transform;
 	Rigidbody* physics;
 private:
-	bool isPendingDestroy;
+	bool isPendingDestroy = false;
 
 	ImageRenderer* renderer;
 	
 public:
 
+
 	Object(std::string texturePath,Vector2 sourceOffset, Vector2 sourceSize)
 	{
 		transform = new Transform();
 		physics = new Rigidbody(transform);
+		physics->AddCollider(new AABB(sourceOffset, sourceSize * 0.2f));//Arreglar esto
+		//El 0.2 es de la escala y hay que arreglarlo ya que cada objeto tiene su escala
+		//Y la escala puede multiplicar por diferentes numeros X e Y
+
 		renderer = new ImageRenderer(transform,texturePath,sourceOffset,sourceSize);
 
 		isPendingDestroy = false;
+	}
+
+	~Object() {
+		delete transform;
+		delete physics;
+		delete renderer;
 	}
 
 	virtual void Update() {
@@ -41,7 +52,9 @@ public:
 	//void SetTransform(Transform t) { transform = t; }
 
 	//De moment NO FAN RES
-	bool IsPendingDestroy(){}
-	virtual void Destroy(){}
+	inline bool IsPendingDestroy() const { return isPendingDestroy; }
+	virtual void Destroy(){
+		isPendingDestroy = true;
+	}
 	virtual void OnCollisionEnter(Object* other){}
 };

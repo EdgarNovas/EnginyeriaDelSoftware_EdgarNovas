@@ -43,6 +43,7 @@
     <ClInclude Include="sources\Scene.h" />
     <ClInclude Include="sources\SceneManager.h" />
     <ClInclude Include="sources\Spawner.h" />
+    <ClInclude Include="sources\TestObject.h" />
     <ClInclude Include="sources\TimeManager.h" />
     <ClInclude Include="sources\Transform.h" />
     <ClInclude Include="sources\Vector2.h" />

@@ -73,8 +73,8 @@ void RenderManager::InitSDL()
 void RenderManager::CreateWindowAndRenderer()
 {
 	int result = SDL_CreateWindowAndRenderer(
-		1360,
-		768,
+		WINDOW_WIDTH,
+		WINDOW_HEIGHT,
 		SDL_WINDOW_SHOWN | SDL_WINDOW_RESIZABLE,
 		&window,
 		&renderer

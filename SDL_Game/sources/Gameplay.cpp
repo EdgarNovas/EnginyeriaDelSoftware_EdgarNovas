@@ -1,35 +1,33 @@
 #include "Gameplay.h"
 #include "TimeManager.h"
 #include "Spawner.h"
+#include "TestObject.h"
 void Gameplay::OnEnter()
 {
-	Object* o = new Object("resources/cat.jpg", Vector2(0.f, 0.f), Vector2(1200.f, 675.f));
-	o->GetRigidBody()->AddForce(Vector2(100, 100));
-	SPAWN.SpawnObject(o);
+	for (int i = 0; i < 50; i++)
+		SpawnObjectRandomly();
 
 	
 }
 
+void Gameplay::SpawnObjectRandomly()
+{
+	
+
+	SPAWN.SpawnObject(new TestObject());
+}
+
 void Gameplay::Update()
 {
-	//Destruction
-
-	//Spawning
-	while (SPAWN.GetSpawnedObjectsCount() > 0) {
-		objects.push_back(SPAWN.GetSpawnedObject());
-	}
-	//Updating
-
-	for (Object* o : objects)
-		o->Update();
+	Scene::Update();
 }
 
 void Gameplay::OnExit()
 {
+	Scene::OnExit();
 }
 
 void Gameplay::Renderer()
 {
-	for (Object* o : objects)
-		o->Render();
+	Scene::Renderer();
 }
