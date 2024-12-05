@@ -75,6 +75,7 @@ public:
 		//5 -> Update Colliders Position
 		for (AABB* col : colliders) {
 			col->SetTopLeft(transform->position);
+			col->SetSize(transform->size * transform->scale);
 		}
 
 	}

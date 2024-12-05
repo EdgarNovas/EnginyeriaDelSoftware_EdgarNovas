@@ -17,9 +17,20 @@ public:
 		physics->AddForce(randomForce);
 	}
 
+
+	TestObject(Vector2 pos, Vector2 startVelocity)
+		: Object("resources/cat.jpg", Vector2(0.f, 0.f), Vector2(1200.f, 675.f))
+	{
+		transform->position = pos;
+		transform->scale = Vector2(0.2f, 0.2f);
+		physics->AddForce(startVelocity);
+	}
+
 	void OnCollisionEnter(Object* other) override
 	{
-		Destroy();
-		other->Destroy();
+		if (TestObject* to = dynamic_cast<TestObject*>(other))
+		{
+			Destroy();
+		}
 	}
 };

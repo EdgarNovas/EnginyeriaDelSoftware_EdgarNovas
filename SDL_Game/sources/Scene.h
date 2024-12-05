@@ -41,6 +41,19 @@ public:
 
 		for (Object* o : objects)
 			o->Update();
+
+		for (int i = 0; i < objects.size(); i++)
+		{
+			for (int j = 0; j < objects.size(); j++)
+			{
+				if (objects[i]->GetRigidBody()->CheckCollision(objects[j]->GetRigidBody()))
+				{
+					objects[i]->OnCollisionEnter(objects[j]);
+					objects[j]->OnCollisionEnter(objects[i]);
+				}
+			}
+		}
+
 	}
 
 	virtual void Renderer() {
