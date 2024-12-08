@@ -3,13 +3,14 @@
 class BT
 {
 public:
-    BT() {
-        
-    }
+    BT() { root = nullptr; }
+
     ~BT()
     {
         
     }
+
+
 
     Node* Search(char key) {
 
@@ -18,6 +19,14 @@ public:
     void InOrder();
     void PostOrder();
     bool Exist(char key);
+
+    void AddNode(char key) {
+        if (root == nullptr)
+        {
+            root = new Node(key);
+            return;
+        }
+    }
 
 private:
     Node* root;
