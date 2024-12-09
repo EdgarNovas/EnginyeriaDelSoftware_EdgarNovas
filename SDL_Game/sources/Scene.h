@@ -44,7 +44,7 @@ public:
 
 		for (int i = 0; i < objects.size(); i++)
 		{
-			for (int j = 0; j < objects.size(); j++)
+			for (int j = i; j < objects.size(); j++)
 			{
 				if (objects[i]->GetRigidBody()->CheckCollision(objects[j]->GetRigidBody()))
 				{

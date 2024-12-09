@@ -2,17 +2,22 @@
 #include "TimeManager.h"
 #include "Spawner.h"
 #include "TestObject.h"
+#include "TextObject.h"
 void Gameplay::OnEnter()
 {
-	/*
 	for (int i = 0; i < 50; i++)
-		SpawnObjectRandomly();
-		*/
-	objects.push_back(new TestObject(Vector2(100, 100), Vector2(1000, 0)));
-	objects.push_back(new TestObject(Vector2(300, 100), Vector2(-1000, 0)));
-	SpawnObjectRandomly();
-	SpawnObjectRandomly();
+	{
+		//SpawnObjectRandomly();
+	}
 	
+	SPAWN.SpawnObject(new TestObject(Vector2(100, 100), Vector2(2000, 0)));
+	SPAWN.SpawnObject(new TestObject(Vector2(300, 100), Vector2(-2000, 0)));
+
+	//Text amb hola a la pos (100,100)
+	Object* textObject = new TextObject("Hola");
+	textObject->GetTransform()->position = Vector2(100, 100);
+	SPAWN.SpawnObject(textObject);
+
 }
 
 void Gameplay::SpawnObjectRandomly()
