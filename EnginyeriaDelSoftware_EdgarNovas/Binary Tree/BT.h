@@ -48,7 +48,6 @@ public:
             return;
         }
 
-        
         Node* parent = Search(root, parentKey);
         if (parent == nullptr) {
             std::cout << "Parent key " << parentKey << " not found!" << std::endl;

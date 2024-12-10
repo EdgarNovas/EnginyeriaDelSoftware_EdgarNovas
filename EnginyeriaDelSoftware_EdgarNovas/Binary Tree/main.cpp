@@ -12,7 +12,6 @@ int main()
     tree.AddNode('C', 'F', true); 
     tree.AddNode('C', 'G', false); 
 
-    // Perform traversals.
     std::cout << "PreOrder: ";
     tree.PreOrder();
     std::cout << "\nInOrder: ";
