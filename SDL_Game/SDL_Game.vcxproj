@@ -33,6 +33,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="sources\AABB.h" />
+    <ClInclude Include="sources\AudioManager.h" />
     <ClInclude Include="sources\FpsCounterUi.h" />
     <ClInclude Include="sources\Game.h" />
     <ClInclude Include="sources\Gameplay.h" />

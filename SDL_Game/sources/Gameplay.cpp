@@ -3,6 +3,9 @@
 #include "Spawner.h"
 #include "TestObject.h"
 #include "TextObject.h"
+#include "AudioManager.h"
+#include "InputManager.h"
+
 void Gameplay::OnEnter()
 {
 	for (int i = 0; i < 50; i++)
@@ -18,16 +21,24 @@ void Gameplay::OnEnter()
 	textObject->GetTransform()->position = Vector2(100, 100);
 	SPAWN.SpawnObject(textObject);
 
-}
+	AM.LoadSong("illuminati");
+	AM.PlaySong("illuminati");
 
-void Gameplay::SpawnObjectRandomly()
-{
-	SPAWN.SpawnObject(new TestObject());
+	AM.LoadClip("shrek");
 }
 
 void Gameplay::Update()
 {
 	Scene::Update();
+
+	if(Input.GetEvent(SDLK_SPACE, DOWN))
+		AM.PlayClip("shrek",0);
+}
+
+
+void Gameplay::SpawnObjectRandomly()
+{
+	SPAWN.SpawnObject(new TestObject());
 }
 
 void Gameplay::OnExit()

@@ -113,5 +113,8 @@
     <ClInclude Include="sources\TextObject.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="sources\AudioManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
