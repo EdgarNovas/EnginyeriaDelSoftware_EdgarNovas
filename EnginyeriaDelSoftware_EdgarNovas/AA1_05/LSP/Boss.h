@@ -3,7 +3,8 @@
 namespace LSP {
 	class Boss : public LSP_Enemy
 	{
-		int health = 700;
+	private:
+		health = 700;
 	public:
 		Boss();
 

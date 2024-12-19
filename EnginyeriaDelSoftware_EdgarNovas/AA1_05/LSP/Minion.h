@@ -3,9 +3,11 @@
 namespace LSP {
 	class Minion : public LSP_Enemy
 	{
-		int health = 50;
+		
 	public:
-		Minion();
+		Minion() {
+			health = 50;
+		}
 
 		// Heredado vía LSP_Enemy
 		int GetHealth() override;

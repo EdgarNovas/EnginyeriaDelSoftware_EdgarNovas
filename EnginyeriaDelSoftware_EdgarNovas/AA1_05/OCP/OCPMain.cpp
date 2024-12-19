@@ -32,6 +32,8 @@ namespace OCP
 			}
 
 			//OR
+
+			//This is okay
 			std::printf("El enemigo, tiene %d de vida\n", enemy->GetHealth());
 
 

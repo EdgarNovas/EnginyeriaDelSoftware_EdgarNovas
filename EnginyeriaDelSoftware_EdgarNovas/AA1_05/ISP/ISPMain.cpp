@@ -15,13 +15,21 @@ namespace ISP
 		AttackTurn(enemy, boss);
 		AttackTurn(boss, enemy);
 	}
-
+	/*
 	void ISPMain::AttackTurn(const ISP_Enemy& enemy1, ISP_Enemy& enemy2)
 	{
 		enemy1.Attack(&enemy2);
 		//enemy2.ReceiveDamage(200000);
 	}
+	*/
 
+	//Change from up to down
+	//Error is here cuz of .h of main ignore
+	void ISPMain::AttackTurn(const IAttack& enemy1, IHurt& enemy2)
+	{
+		enemy1.Attack(&enemy2);
+		//enemy2.ReceiveDamage(200000);
+	}
 	void ISPMain::ForceReceiveDamage(ISP_Enemy& enemy)
 	{
 		enemy.ReceiveDamage(200000);
